@@ -6,7 +6,7 @@ var PostsSchema = new Schema({
     title: String,
     body: String,
     description: String,
-    userId: { type: ObjectId, /*ref: 'User',*/ default: null }
+    userId: { type: ObjectId, ref: 'User', default: null }
 }, { collection: 'posts' });
 
 var PostModel = mongoose.model('Post', PostsSchema);

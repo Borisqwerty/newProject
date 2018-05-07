@@ -5,6 +5,8 @@ var usersHandler = new UsersHandler();
 
 router.get('/', usersHandler.getAllUsers);
 router.post('/', usersHandler.createUser);
+router.post('/signUp', usersHandler.signUp);
+router.post('/signIn', usersHandler.signIn);
 router.patch('/:id', usersHandler.updateUser);
 
 module.exports = router;

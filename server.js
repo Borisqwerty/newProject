@@ -3,6 +3,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var app = express();
 var port = 3030;
+var expresSession = require('express-session');
+var MongoStore = require('connect-mongo')(expresSession);
 
 // var connection = mongoose.createConnection('mongodb://localhost:27017/testDb');
 mongoose.connect('mongodb://localhost:27017/testDb');
@@ -14,6 +16,10 @@ connection.once('connected', function () {
     app.use(bodyParser.json());
 
     require('./routes/index')(app);
+
+    app.use(expresSession({
+
+    }));
 
     app.listen(port, function () {
         console.log('server listening on port ' + port);
