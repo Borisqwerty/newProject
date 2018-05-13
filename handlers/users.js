@@ -92,7 +92,7 @@ var UsersHandler = function () {
 
     }
 )
-}
+}};
 
 
 module.exports = UsersHandler;
